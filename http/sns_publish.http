@@ -4,3 +4,7 @@ Content-Type: application/json
 {
   "data": "hello"
 }
+
+###
+POST http://localhost:8080/sns/message
+Content-Type: application/json

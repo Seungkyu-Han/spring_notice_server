@@ -1,0 +1,1 @@
+GET http://localhost:8080/sns?endpoint=https://webhook.site/95bd6611-e5f6-4e5d-9bb9-a91f83d4dfa5&topicArn=arn:aws:sns:ap-northeast-2:648878296546:study
