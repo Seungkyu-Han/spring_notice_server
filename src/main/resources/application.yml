@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    aws:
+      credentials:
+        access-key: ${accessKey}
+        secret-key: ${secretKEy}
+
+      region:
+        static: ap-northeast-2
+
+      sns:
+        topic:
+          arn: ${arn}
+      sqs:
+        queue:
+          name: study
