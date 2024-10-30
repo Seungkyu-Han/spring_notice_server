@@ -17,7 +17,7 @@ class AwsConfig(
     @Value("\${spring.cloud.aws.region.static}")
     private val region: String,
     @Value("\${spring.cloud.aws.sns.topic.arn}")
-    private val arn: String
+    val arn: String
 ) {
 
     @Bean
