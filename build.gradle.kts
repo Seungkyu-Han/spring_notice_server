@@ -25,7 +25,10 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
 
 
-
+    //COROUTINE
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx3")
 }
 
 tasks.test {

@@ -3,7 +3,7 @@ spring:
     aws:
       credentials:
         access-key: ${accessKey}
-        secret-key: ${secretKEy}
+        secret-key: ${secretKey}
 
       region:
         static: ap-northeast-2
