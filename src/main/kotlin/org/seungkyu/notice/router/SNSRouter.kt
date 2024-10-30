@@ -14,6 +14,8 @@ class SNSRouter {
     ) = coRouter{
         "/sns".nest {
             POST("", snsService::publish)
+            GET("", snsService::subscribe)
+            POST("/message", snsService::postMessage)
         }
     }
 }
