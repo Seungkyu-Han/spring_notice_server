@@ -1,6 +1,7 @@
 package org.seungkyu.notice.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import kotlinx.coroutines.reactor.awaitSingle
 import lombok.SneakyThrows
 import org.seungkyu.notice.config.AwsConfig
 import org.seungkyu.notice.dto.PublishReq
@@ -17,7 +18,7 @@ class SnsService(
 ) {
     @SneakyThrows
     suspend fun publish(serverRequest: ServerRequest): ServerResponse{
-        val messageData = serverRequest.bodyToMono(PublishReq::class.java)
+        val messageData = serverRequest.bodyToMono(PublishReq::class.java).awaitSingle()
 
         val message = objectMapper.writeValueAsString(messageData)
 
@@ -28,6 +29,6 @@ class SnsService(
             .build()
 
         val snsClient = awsConfig.snsClient()
-        return ServerResponse.ok().bodyValueAndAwait(snsClient.publish(publishRequest))
+        return ServerResponse.ok().bodyValueAndAwait(snsClient.publish(publishRequest).messageId())
     }
 }
